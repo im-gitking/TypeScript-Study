@@ -7,5 +7,6 @@ function add(num1, num2) {
 buttonElement.addEventListener('click', function () {
     var num1 = num1Element.value;
     var num2 = num2Element.value;
-    var result = add(+num1, +num2);
+    var result = add(+num1, +num2); //type casting to number
+    console.log(result);
 });
