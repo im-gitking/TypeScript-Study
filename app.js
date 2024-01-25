@@ -15,6 +15,7 @@ function add(num1, num2) {
     // number, string or any types, then typecast to number and add
     return +num1 + +num2;
 }
+//function printResult(resultObj: Result) {     // Alias & Interface both can be used in object
 function printResult(resultObj) {
     console.log(resultObj.val);
     console.log(resultObj.timestamp);
