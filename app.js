@@ -1,8 +1,9 @@
-var num1Element = document.getElementById('num1');
-var num2Element = document.getElementById('num2');
-var buttonElement = document.querySelector('button');
-var numResults = [];
-var textResults = [];
+"use strict";
+const num1Element = document.getElementById('num1');
+const num2Element = document.getElementById('num2');
+const buttonElement = document.querySelector('button');
+const numResults = [];
+const textResults = [];
 function add(num1, num2) {
     // check both numbers, then pass
     if (typeof num1 === 'number' && typeof num2 === 'number') {
@@ -20,13 +21,21 @@ function printResult(resultObj) {
     console.log(resultObj.val);
     console.log(resultObj.timestamp);
 }
-buttonElement.addEventListener('click', function () {
-    var num1 = num1Element.value;
-    var num2 = num2Element.value;
-    var result = add(+num1, +num2); // type casting to number
+buttonElement.addEventListener('click', () => {
+    const num1 = num1Element.value;
+    const num2 = num2Element.value;
+    const result = add(+num1, +num2); // type casting to number
     numResults.push(result);
-    var resultString = add(num1, num2); // string
+    const resultString = add(num1, num2); // string
     textResults.push(resultString);
     printResult({ val: result, timestamp: new Date() });
     console.log(numResults, textResults);
+});
+const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('It worked!');
+    }, 1000);
+});
+myPromise.then((result) => {
+    console.log(result.split('w'));
 });
